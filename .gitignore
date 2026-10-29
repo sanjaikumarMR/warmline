@@ -3,6 +3,7 @@ node_modules/
 dist/
 out/
 coverage/
+*.tsbuildinfo
 
 # Secrets. The only file with real keys is .env; everything here is belt and braces.
 .env
