@@ -1,0 +1,29 @@
+node_modules/
+.next/
+dist/
+out/
+coverage/
+
+# Secrets. The only file with real keys is .env; everything here is belt and braces.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+.secrets
+
+# A linked WhatsApp session is a login. Never commit it.
+.wa-session/
+.wa-cache/
+apps/bridge/.wwebjs_cache/
+
+# Local editor launch configuration
+/.claude/launch.json
+
+# Generated Prisma client
+generated/
+packages/db/src/generated/
+
+*.log
+.DS_Store
