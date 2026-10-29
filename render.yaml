@@ -9,8 +9,6 @@ services:
     name: warmline-web
     runtime: node
     plan: free
-  
-    region: oregon
     buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @warmline/db generate && pnpm --filter @warmline/web build
     # Runs on its own before traffic switches over, so the schema is ready.
     preDeployCommand: pnpm --filter @warmline/db deploy
@@ -21,18 +19,13 @@ services:
         value: "22"
       - key: DATABASE_URL
         sync: false # DigitalOcean connection string, keep ?sslmode=require
-      - key: APP_PASSCODE
-        sync: false
-      - key: SESSION_SECRET
-        generateValue: true
-      - key: BRIDGE_SHARED_SECRET
-        sync: false # must match the bridge's copy
+      
+     
       - key: AI_PROVIDER
         value: aistudio
       - key: AI_MODEL
         value: gemma-4-31b-it
-      - key: AI_API_KEY
-        sync: false
+      
 
   # ---------------------------------------------------------------------------
   # Optional: run the WhatsApp bridge on Render instead of your own machine.
