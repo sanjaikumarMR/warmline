@@ -17,8 +17,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "22"
-      - key: DATABASE_URL
-        sync: false # DigitalOcean connection string, keep ?sslmode=require
+      
       
      
       - key: AI_PROVIDER
